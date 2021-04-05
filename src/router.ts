@@ -8,12 +8,12 @@ const router = createRouter({
     {
       name: '/path/title',
       path: '/path/title',
-      component: () => import('./components/HelloWorld.vue')
+      component: () => import('./views/Dashboard/test1.vue')
     },
     {
       name: '/path/title1',
       path: '/path/title1',
-      component: () => import('./components/HelloWorld.vue')
+      component: () => import('./views/Dashboard/test1.vue')
     },
     {
       name: '/path/title2-1',
@@ -31,10 +31,25 @@ const router = createRouter({
       component: () => import('./components/HelloWorld.vue')
     },
     {
-      name: '/path/title3',
-      path: '/path/title3',
-      component: () => import('./components/HelloWorld.vue')
-    }
+      name: 'message',
+      path: '/message',
+      component: () => import('./views/message/alert.vue')
+    },
+    {
+      name: 'button',
+      path: '/button',
+      component: () => import('./views/button/index.vue')
+    },
+    {
+      name: 'dialog',
+      path: '/dialog',
+      component: () => import('./views/dialog/index.vue')
+    },
+    {
+      name: 'switch',
+      path: '/switch',
+      component: () => import('./views/switch/index.vue')
+    },
   ]
 })
 

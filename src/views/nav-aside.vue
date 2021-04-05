@@ -66,10 +66,28 @@ export default defineComponent({
       {
         id: "3",
         icon: "",
-        title: "title3",
-        routePath: "/path/title3",
+        title: "message",
+        routePath: "/message",
+      },
+      {
+        id: "4",
+        icon: "",
+        title: "button",
+        routePath: "/button",
+      },
+      {
+        id: "5",
+        icon: "",
+        title: "dialog",
+        routePath: "/dialog",
+      },
+      {
+        id: "6",
+        icon: "",
+        title: "switch",
+        routePath: "/switch",
       }
-    ]);  
+    ]);
 
     let activeItem: any = ref<string>("1-1");
 

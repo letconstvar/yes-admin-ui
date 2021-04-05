@@ -9,7 +9,7 @@
         <v-header :selected-item="selectedItem" />
       </div>
       <div class="main">
-        <router-view />
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -55,6 +55,7 @@ export default defineComponent({
     background-color: #eee;
     z-index: -1;
     .main {
+      z-index: 9999;
       padding: 0 20px;
     }
   }

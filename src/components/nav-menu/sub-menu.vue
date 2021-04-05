@@ -92,6 +92,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 .y-menu-title {
   position: relative;
   cursor: pointer;
@@ -104,12 +105,13 @@ a {
     top: 13px;
     right: 10px;
     transition: .5s;
-    -ms-transition:rotate(180deg);     /* Internet Explorer */
-    -moz-transition:rotate(180deg);    /* Firefox */
-    -webkit-transition:rotate(180deg); /* Safari 和 Chrome */
-    -o-transition:rotate(180deg);      /* Opera */
+    -ms-transition: rotate(180deg);     /* Internet Explorer */
+    -moz-transition: rotate(180deg);    /* Firefox */
+    -webkit-transition: rotate(180deg); /* Safari 和 Chrome */
+    -o-transition: rotate(180deg);      /* Opera */
   }
   .y-menu-icon__prefix {
+    margin-left: -4px;
     margin-right: 10px;
     vertical-align: text-bottom;
   }
@@ -121,6 +123,7 @@ a {
     -o-transform:rotate(180deg);      /* Opera */
   }
 }
+
 // isAcitve
 .y-menu-title__isActive {
   border-radius: 3px;
