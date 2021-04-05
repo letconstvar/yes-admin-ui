@@ -50,6 +50,16 @@ const router = createRouter({
       path: '/switch',
       component: () => import('./views/switch/index.vue')
     },
+    {
+      name: 'checkbox',
+      path: '/checkbox',
+      component: () => import('./views/checkbox/index.vue')
+    },
+    {
+      name: 'radio',
+      path: '/radio',
+      component: () => import('./views/radio/index.vue')
+    },
   ]
 })
 

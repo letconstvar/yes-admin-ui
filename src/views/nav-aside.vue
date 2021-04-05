@@ -86,6 +86,18 @@ export default defineComponent({
         icon: "",
         title: "switch",
         routePath: "/switch",
+      },
+      {
+        id: "7",
+        icon: "",
+        title: "checkbox",
+        routePath: "/checkbox",
+      },
+      {
+        id: "8",
+        icon: "",
+        title: "radio",
+        routePath: "/radio",
       }
     ]);
 

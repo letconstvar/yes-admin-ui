@@ -21,9 +21,9 @@ export default defineComponent({
     disabled: { type: Boolean, default: false }
   },
 
-  setup (props, { emit }) {
-    const input_checkbox = ref<null>(null);
-    const core = ref<null>(null);
+  setup(props, { emit }) {
+    const input_checkbox = ref<any>(null);
+    const core = ref<any>(null);
 
     function setColor(): void {
       if (props.activeColor || props.inactiveColor) {
@@ -45,7 +45,7 @@ export default defineComponent({
     onMounted(() => {
       setColor();
       input_checkbox.value = props.modelValue;
-    })
+    });
 
     return {
       handleClick,
@@ -113,3 +113,5 @@ export default defineComponent({
     cursor: not-allowed;
   }
 }
+
+</style>
