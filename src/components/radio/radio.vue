@@ -16,7 +16,7 @@
   </label>
 </template>
 
-<script>
+<script lang="ts">
 import {computed, defineComponent, inject} from "vue";
 
 export default defineComponent({
@@ -30,15 +30,15 @@ export default defineComponent({
   setup(props, { emit }) {
     const RadioGroup = inject('RadioGroup', '');
 
-    const isRadioGroup = computed(() => {
+    const isRadioGroup: boolean = computed((): boolean => {
       return RadioGroup == "" ? false : true;
     });
 
     const model = computed({
-      get: () => {
+      get(): string|boolean {
         return isRadioGroup.value ? RadioGroup.props.modelValue : props.modelValue;
       },
-      set: value => {
+      set(value): void {
         isRadioGroup.value ? RadioGroup.emit('update:modelValue', value) : emit('update:modelValue', value);
       }
     });

@@ -4,7 +4,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent, provide} from "vue";
 
 export default defineComponent({

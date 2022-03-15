@@ -17,43 +17,50 @@
   </section>
 </template>
 
-<script>
-import {defineComponent, computed, inject} from "vue";
+<script lang="ts">
+import {defineComponent, computed, inject, PropType} from "vue";
+
+interface label {
+  type: string|number
+}
 
 export default defineComponent({
   name: "y-checkbox",
   props: {
     modelValue: { type: Boolean, default: false },
-    label: { type: String, default: '' },
+    label: {
+      type: Object as PropType<label>,
+      default: ''
+      // type: String, default: ''
+    },
     name: { type: String, default: '' }
   },
 
   setup(props, { emit, slots }) {
-    const checkboxGroup = inject('checkboxGroup', '');
+    const checkboxGroup: any = inject('checkboxGroup', '');
 
     const isSlots = slots.default;
 
-    const isCheckboxGroup = computed(() => {
+    const isCheckboxGroup = computed((): boolean => {
       return checkboxGroup == "" ? false : true;
     })
 
-    const isChecked = computed(() => {
+    const isChecked = computed((): string|boolean => {
       return isCheckboxGroup.value
         ? checkboxGroup.props.modelValue.includes(props.label) ? props.label : false
         : props.modelValue;
     })
 
     const model = computed({
-      get: () => {
+      get(): string|boolean {
         return isCheckboxGroup.value ? checkboxGroup.props.modelValue : props.modelValue;
       },
-      set: value => {
-        console.log(value)
+      set(value): void {
         isCheckboxGroup.value ? checkboxGroup.emit('update:modelValue', value) : emit('update:modelValue', value);
       }
     })
 
-    function handleClick() {
+    function handleClick(): void {
       isCheckboxGroup.value
         ? checkboxGroup.props.modelValue.includes(props.label)
           ? checkboxGroup.props.modelValue.splice(checkboxGroup.props.modelValue.indexOf(props.label), 1)
